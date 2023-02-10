@@ -46,4 +46,15 @@ app.post('/api/notes', (req, res) => {
   }
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+  const noteId = req.params.id;
+
+  if (noteId) {
+    db.readAndDeleteById(noteId, './db/db.json');
+  }
+
+  // Respond with no content
+  res.sendStatus(204);
+});
+
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
