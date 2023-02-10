@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const uuid = require('uuid');
 const db = require('./helpers/db');
 
 const app = express();
@@ -27,6 +28,7 @@ app.post('/api/notes', (req, res) => {
 
   if (title && text) {
     const newNote = {
+      id: uuid.v4(),
       title,
       text,
     };

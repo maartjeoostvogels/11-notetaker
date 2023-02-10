@@ -1,9 +1,11 @@
 [
     {
+        "id": "df8b8e85-8901-43f7-8956-5b9e4838e177",
         "title": "Test Title",
         "text": "Test text"
     },
     {
+        "id": "5fffa0cb-6087-4d8c-8dc7-45b0f7acd42f",
         "title": "Test API",
         "text": "Testing adding notes api"
     }
