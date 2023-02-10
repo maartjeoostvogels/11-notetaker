@@ -24,13 +24,7 @@ const readAndDeleteById = (id, file) => {
         } else {
             const parsedData = JSON.parse(data);
 
-            const filteredNotes = [];
-            for (let i = 0; i < parsedData.length; i++) {
-                const item = parsedData[i];
-                if (id !== item.id) {
-                    filteredNotes.push(item);
-                }
-            }
+            const filteredNotes = parsedData.filter(note => id !== note.id);
 
             fs.writeFile(file, JSON.stringify(filteredNotes, null, 4), (err) =>
                 err ? console.error(err) : console.info(`\nDatabase file written ${file}`)
